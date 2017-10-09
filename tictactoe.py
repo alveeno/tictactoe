@@ -26,12 +26,14 @@ while not gameOver:
     print("\n\n\n\n\n\n\n\n\n")
     print("", *userInput[0:3], "\n", *userInput[3:6], "\n", *userInput[6: 9], sep='  ')
 
-    if (('O' or 'X') == userInput[0] == userInput[1] == userInput[2]) or (('O' or 'X') == userInput[3] == userInput[4] == userInput[5]) or (('O' or 'X') == userInput[6] == userInput[7] == userInput[8]):
+    if (userInput[0] != '-' and userInput[0] == userInput[1] == userInput[2]) or (userInput[3] != '-' and userInput[3] == userInput[4] == userInput[5]) or (userInput[6] != '-' and userInput[6] == userInput[7] == userInput[8]):
         gameOver = True
         print("Game Over")
-    elif (('O' or 'X') == userInput[0] == userInput[3] == userInput[6]) or (('O' or 'X') == userInput[1] == userInput[4] == userInput[7]) or (('O' or 'X') == userInput[2] == userInput[5] == userInput[8]):
+    elif (userInput[0] != '-' and userInput[0] == userInput[3] == userInput[6]) or (userInput[1] != '-' and userInput[1] == userInput[4] == userInput[7]) or (userInput[2] != '-' and userInput[2] == userInput[5] == userInput[8]):
         gameOver = True
         print("Game Over")
-    elif (('O' or 'X') == userInput[0] == userInput[4] == userInput[8]) or (('O' or 'X') == userInput[2] == userInput[4] == userInput[6]):
+    elif (userInput[0] != '-' and userInput[0] == userInput[4] == userInput[8]) or (userInput[2] != '-' and userInput[2] == userInput[4] == userInput[6]):
         gameOver = True
         print("Game Over")
+    elif '-' not in userInput:
+        gameOver = True
